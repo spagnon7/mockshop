@@ -9,11 +9,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles({
-    card: {
+    cardLi: {
         width: '20%',
         maxWidth: 200,
         margin: 4,
-        textAlign: 'center'
+        textAlign: 'center',
+        listStyleType: 'none'
     },
     media: {
         height: 200
@@ -36,54 +37,28 @@ const CategoriesList = () => {
         return <CircularProgress className={classes.spinner}/>
     }
     if (productData) {
-        return (
-            <div id='categories-list'>
-                <Card className={classes.card} variant='outlined'>
-                    <CardActionArea>
-                        <CardMedia 
-                        image={productData['men clothing'][0]['image']}
-                        className={classes.media}
-                        />
-                        <Typography classname={classes.label}>
-                            Men's Clothing
-                        </Typography>
-                    </CardActionArea>
-                </Card>
-                <Card className={classes.card} variant='outlined'>
-                    <CardActionArea>
-                        <CardMedia 
-                        image={productData['jewelery'][0]['image']}
-                        className={classes.media}
-                        />
-                        <Typography>
-                            Jewelry
-                        </Typography>
-                    </CardActionArea>
-                </Card>
-                <Card className={classes.card} variant='outlined'>
-                    <CardActionArea>
-                        <CardMedia 
-                        image={productData['electronics'][0]['image']}
-                        className={classes.media}
-                        />
-                        <Typography>
-                            Electronics
-                        </Typography>
-                    </CardActionArea>
-                </Card>
-                <Card className={classes.card} variant='outlined'>
-                    <CardActionArea>
-                        <CardMedia 
-                        image={productData['women clothing'][0]['image']}
-                        className={classes.media}
-                        />
-                        <Typography>
-                            Women's Clothing
-                        </Typography>
-                    </CardActionArea>
-                </Card>
-            </div>
-        );
+        let categoriesList = [];
+
+        for (const category in productData) {
+            const categoryCard = (
+                <li className={classes.cardLi}>
+                    <Card variant='outlined'>
+                        <CardActionArea>
+                            <CardMedia 
+                            image={productData[category][0]['image']}
+                            className={classes.media}
+                            />
+                            <Typography className={classes.label}>
+                                {category}
+                            </Typography>
+                        </CardActionArea>
+                    </Card>
+                </li>
+            )
+            categoriesList.push(categoryCard);
+        }
+        
+        return categoriesList;        
     }
     if (error) {
         return <p>{error}</p>

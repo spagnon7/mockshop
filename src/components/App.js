@@ -13,7 +13,9 @@ function App() {
 
   return (
     <div id='app'>
-      <CategoriesList />
+      <ul id='categories-list'>
+        <CategoriesList />
+      </ul>
     </div>
   );
 }
