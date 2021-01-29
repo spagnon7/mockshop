@@ -7,6 +7,14 @@ const initialProductDataState = {
 }
 
 const productDataReducer = (state = initialProductDataState, action) => {
+    const organizeDataByCategory = (productData) => {
+        return productData.reduce((newObj, item) => {
+          newObj[item.category] = newObj[item.category] || [];
+          newObj[item.category].push(item);
+          return newObj;
+        }, {});
+      }
+    
     switch (action.type) {
         case GET_PRODUCTS_REQUEST: return {
             ...state,
@@ -17,7 +25,7 @@ const productDataReducer = (state = initialProductDataState, action) => {
         case GET_PRODUCTS_SUCCESS: return {
             ...state,
             loading: false,
-            productData: action.payload,
+            productData: organizeDataByCategory(action.payload),
             error: ''
         }
         case GET_PRODUCTS_FAILURE: return {
