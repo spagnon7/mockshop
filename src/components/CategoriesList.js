@@ -38,7 +38,7 @@ const CategoriesList = () => {
     }
     if (productData) {
         let categoriesList = [];
-
+        console.log(productData);
         for (const category in productData) {
             const categoryCard = (
                 <li className={classes.cardLi}>
