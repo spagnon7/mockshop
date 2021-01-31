@@ -1,4 +1,4 @@
-import { GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE } from './actionTypes';
+import { GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE } from './productActionTypes';
 
 const getProductsRequest = () => {
     return {

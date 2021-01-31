@@ -1,7 +1,7 @@
-import { GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE } from '../actions/actionTypes';
+import { GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE } from '../actions/productActionTypes';
 
 const initialProductDataState = {
-    loading: false,
+    loading: true,
     productData: null,
     error: ''
 }

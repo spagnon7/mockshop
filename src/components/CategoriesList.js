@@ -27,21 +27,21 @@ const useStyles = makeStyles({
     }
 })
 
-const CategoriesList = () => {
-    const productData = useSelector(state => state.productData);
-    const isLoading = useSelector(state => state.loading);
-    const error = useSelector(state => state.error);
+const CategoriesList = (props) => {
+    const productData = useSelector(state => state.productData.productData);
+    const isLoading = useSelector(state => state.productData.loading);
+    const error = useSelector(state => state.productData.error);
     const classes = useStyles();
+    const handleCategoryCardClick = props.handleCategoryCardClick;
+    let categoriesList = [];
 
     if (isLoading) {
         return <CircularProgress className={classes.spinner}/>
     }
     if (productData) {
-        let categoriesList = [];
-        console.log(productData);
         for (const category in productData) {
             const categoryCard = (
-                <li className={classes.cardLi}>
+                <li className={classes.cardLi} key={category} onClick={() => handleCategoryCardClick(category)}>
                     <Card variant='outlined'>
                         <CardActionArea>
                             <CardMedia 
@@ -58,13 +58,14 @@ const CategoriesList = () => {
             categoriesList.push(categoryCard);
         }
         
-        return categoriesList;        
+        return (
+            <ul id='cards-container'>
+                {categoriesList}
+            </ul>
+        )
     }
     if (error) {
         return <p>{error}</p>
-    }
-    else {
-        return <div></div>
     }
 }
 

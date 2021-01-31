@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#categories-list {
+#cards-container {
   display: flex;
   justify-content: center;
 }
