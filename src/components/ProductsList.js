@@ -18,7 +18,10 @@ const useStyles = makeStyles({
         listStyleType: 'none'
     },
     media: {
-        height: 200
+        height: 200,
+        width: '90%',
+        backgroundSize: 'contain',
+        margin: '5px auto'
     },
     label: {
         fontWeight: 'bold'

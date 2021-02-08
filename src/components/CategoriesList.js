@@ -13,12 +13,16 @@ const useStyles = makeStyles({
     cardLi: {
         width: '20%',
         maxWidth: 200,
-        margin: 4,
+        margin: 15,
         textAlign: 'center',
         listStyleType: 'none'
     },
     media: {
-        height: 250
+        height: 200,
+        width: '90%',
+        backgroundSize: 'contain',
+        margin: '5px auto'
+
     },
     label: {
         fontWeight: 'bold',
