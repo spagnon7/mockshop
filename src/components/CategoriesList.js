@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setProductsDisplay } from '../actions/displayActions';
 import 'fontsource-roboto';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
@@ -17,10 +18,11 @@ const useStyles = makeStyles({
         listStyleType: 'none'
     },
     media: {
-        height: 200
+        height: 250
     },
     label: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textTransform: 'capitalize'
     },
     spinner: {
         marginTop: 90,
@@ -30,9 +32,14 @@ const useStyles = makeStyles({
 const CategoriesList = (props) => {
     const productData = useSelector(state => state.productData.productData);
     const isLoading = useSelector(state => state.productData.loading);
-    const error = useSelector(state => state.productData.error);
+    const error = useSelector(state => state.productData.error);    
+    const dispatch = useDispatch();
     const classes = useStyles();
-    const handleCategoryCardClick = props.handleCategoryCardClick;
+
+    const handleCategoryCardClick = category => {
+        dispatch(setProductsDisplay(category));
+      }
+
     let categoriesList = [];
 
     if (isLoading) {

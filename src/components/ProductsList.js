@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setCategoriesDisplay } from '../actions/displayActions';
 import 'fontsource-roboto';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
@@ -24,13 +25,20 @@ const useStyles = makeStyles({
     },
     spinner: {
         marginTop: 90,
+    },
+    title: {
+        textTransform: 'capitalize'
     }
 })
 
 const ProductsList = (props) => {
     const productData = useSelector(state => state.productData.productData);
+    const dispatch = useDispatch();
     const classes = useStyles();
-    const handleBackButtonClick = props.handleBackButtonClick;
+
+    const handleBackButtonClick = () => {
+        dispatch(setCategoriesDisplay());
+      }
 
     const productCards = productData[props.productCategory].map( (product, index) => {
         return (
@@ -52,6 +60,7 @@ const ProductsList = (props) => {
 
     return (
         <>
+            <h2 className={classes.title}>{props.productCategory}</h2>
             <ul id='cards-container'>
                 {productCards}
             </ul>
