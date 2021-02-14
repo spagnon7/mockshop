@@ -8,78 +8,41 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import CardTemplate from './CardTemplate';
 
 const useStyles = makeStyles({
-    cardLi: {
-        width: '20%',
-        maxWidth: 200,
-        margin: 15,
-        textAlign: 'center',
-        listStyleType: 'none'
-    },
-    media: {
-        height: 200,
-        width: '90%',
-        backgroundSize: 'contain',
-        margin: '5px auto'
-
-    },
-    label: {
-        fontWeight: 'bold',
-        textTransform: 'capitalize'
-    },
     spinner: {
         marginTop: 90,
     }
-})
+});
 
 const CategoriesList = () => {
     const productData = useSelector(state => state.productData.productData);
-    const isLoading = useSelector(state => state.productData.loading);
     const error = useSelector(state => state.productData.error);    
     const dispatch = useDispatch();
     const classes = useStyles();
 
-    const handleCategoryCardClick = category => {
-        dispatch(setProductsDisplay(category));
-      }
-
-    let categoriesList = [];
-
-    if (productData) {
-        for (const category in productData) {
-            const categoryCard = (
-                <li className={classes.cardLi} key={category} onClick={() => handleCategoryCardClick(category)}>
-                    <Card variant='outlined'>
-                        <CardActionArea>
-                            <CardMedia 
-                            image={productData[category][0]['image']}
-                            className={classes.media}
-                            />
-                            <Typography className={classes.label}>
-                                {category}
-                            </Typography>
-                        </CardActionArea>
-                    </Card>
-                </li>
-            )
-            categoriesList.push(categoryCard);
-        }
-        
+  if (productData) {
         return (
-            <ul id='cards-container'>
-                {categoriesList}
-            </ul>
+            <div id='cards-container'>
+                {Object.keys(productData).map( categoryName => {     
+                    return <CardTemplate 
+                        title = {categoryName}
+                        imageURL = {productData[categoryName][0]['image']}
+                        clickHandler = {() => dispatch(setProductsDisplay(categoryName))}
+                    />;
+                })}
+            </div>
         );
     }
 
     if (error) {
         return <p>{error}</p>;
     }
-    
+
     else {
         return <CircularProgress className={classes.spinner}/>;
     }
-}
+};
 
 export default CategoriesList;
