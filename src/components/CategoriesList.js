@@ -46,9 +46,6 @@ const CategoriesList = () => {
 
     let categoriesList = [];
 
-    if (isLoading) {
-        return <CircularProgress className={classes.spinner}/>
-    }
     if (productData) {
         for (const category in productData) {
             const categoryCard = (
@@ -73,10 +70,15 @@ const CategoriesList = () => {
             <ul id='cards-container'>
                 {categoriesList}
             </ul>
-        )
+        );
     }
+
     if (error) {
-        return <p>{error}</p>
+        return <p>{error}</p>;
+    }
+    
+    else {
+        return <CircularProgress className={classes.spinner}/>;
     }
 }
 

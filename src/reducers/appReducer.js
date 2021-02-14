@@ -15,7 +15,7 @@ const appReducer = (state = initialCurrentDisplay, action) => {
         case SET_PRODUCTS_DISPLAY: return {
             ...state,
             activePage: 'products',
-            selectedCategoryName: action.payload
+            selectedCategoryName: action.categoryName
         }
         default: return state
     }

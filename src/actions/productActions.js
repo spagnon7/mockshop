@@ -1,10 +1,4 @@
-import { GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE } from './productActionTypes';
-
-const getProductsRequest = () => {
-    return {
-        type: GET_PRODUCTS_REQUEST
-    }
-};
+import { GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE } from './productActionTypes';
 
 const getProductsSuccess = productsData => {
     return {
@@ -22,7 +16,6 @@ const getProductsFailure = errorMessage => {
 
 const getProducts = () => {
     return function(dispatch) {
-        dispatch(getProductsRequest());
         fetch('https://fakestoreapi.com/products')
             .then(response => response.json())
             .then(data => {

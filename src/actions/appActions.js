@@ -6,10 +6,10 @@ const setCategoriesDisplay = () => {
     }
 }
 
-const setProductsDisplay = (productCategory) => {
+const setProductsDisplay = (categoryName) => {
     return {
         type: SET_PRODUCTS_DISPLAY,
-        payload: productCategory
+        categoryName
     }
 }
 
