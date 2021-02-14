@@ -1,24 +1,24 @@
-import { SET_CATEGORIES_DISPLAY, SET_PRODUCTS_DISPLAY } from '../actions/displayActionTypes';
+import { SET_CATEGORIES_DISPLAY, SET_PRODUCTS_DISPLAY } from '../actions/appActionTypes';
 
 const initialCurrentDisplay = {
-    currentDisplay: 'categories',
+    activePage: 'categories',
     productCategory: null
 }
 
-const currentDisplayReducer = (state = initialCurrentDisplay, action) => {
+const appReducer = (state = initialCurrentDisplay, action) => {
     switch (action.type) {
         case SET_CATEGORIES_DISPLAY: return {
             ...state,
-            currentDisplay: 'categories',
+            activePage: 'categories',
             productCategory: null
         }
         case SET_PRODUCTS_DISPLAY: return {
             ...state,
-            currentDisplay: 'products',
+            activePage: 'products',
             productCategory: action.payload
         }
         default: return state
     }
 }
 
-export { currentDisplayReducer };
+export { appReducer };

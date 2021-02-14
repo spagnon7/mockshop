@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setProductsDisplay } from '../actions/displayActions';
+import { setProductsDisplay } from '../actions/appActions';
 import 'fontsource-roboto';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
     }
 })
 
-const CategoriesList = (props) => {
+const CategoriesList = () => {
     const productData = useSelector(state => state.productData.productData);
     const isLoading = useSelector(state => state.productData.loading);
     const error = useSelector(state => state.productData.error);    

@@ -1,4 +1,4 @@
-import { SET_CATEGORIES_DISPLAY, SET_PRODUCTS_DISPLAY } from './displayActionTypes';
+import { SET_CATEGORIES_DISPLAY, SET_PRODUCTS_DISPLAY } from './appActionTypes';
 
 const setCategoriesDisplay = () => {
     return {

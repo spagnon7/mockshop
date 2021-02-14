@@ -6,7 +6,7 @@ const initialProductDataState = {
     error: ''
 }
 
-const productDataReducer = (state = initialProductDataState, action) => {
+const productsReducer = (state = initialProductDataState, action) => {
     const organizeDataByCategory = (productData) => {
         return productData.reduce((newObj, item) => {
           newObj[item.category] = newObj[item.category] || [];
@@ -38,4 +38,4 @@ const productDataReducer = (state = initialProductDataState, action) => {
     }
 }
 
-export { productDataReducer };
+export { productsReducer };

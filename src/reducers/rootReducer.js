@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import {productDataReducer} from './productDataReducer';
-import {currentDisplayReducer} from './currentDisplayReducer';
+import {productsReducer} from './productsReducer';
+import {appReducer} from './appReducer';
 
 const rootReducer = combineReducers({
-    productData: productDataReducer,
-    currentDisplay: currentDisplayReducer
+    productData: productsReducer,
+    appData: appReducer
 })
 
 export {rootReducer};

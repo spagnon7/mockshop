@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCategoriesDisplay } from '../actions/displayActions';
+import { setCategoriesDisplay } from '../actions/appActions';
 import 'fontsource-roboto';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';

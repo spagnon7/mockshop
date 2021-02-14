@@ -6,8 +6,8 @@ import CategoriesList from './CategoriesList';
 import ProductsList from './ProductsList';
 
 function App() {
-  const currentDisplay = useSelector(state => state.currentDisplay.currentDisplay)
-  const productCategory = useSelector(state => state.currentDisplay.productCategory)
+  const activePage = useSelector(state => state.appData.activePage)
+  const productCategory = useSelector(state => state.appData.productCategory)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,8 +16,8 @@ function App() {
 
   return (
     <div id='app'>
-      {currentDisplay === 'categories' && <CategoriesList />}
-      {currentDisplay === 'products' && <ProductsList productCategory={productCategory} />}
+      {activePage === 'categories' && <CategoriesList />}
+      {activePage === 'products' && <ProductsList productCategory={productCategory} />}
     </div>
   );
 }
