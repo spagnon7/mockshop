@@ -7,7 +7,7 @@ import ProductsList from './ProductsList';
 
 function App() {
   const activePage = useSelector(state => state.appData.activePage)
-  const productCategory = useSelector(state => state.appData.productCategory)
+  const selectedCategoryName = useSelector(state => state.appData.selectedCategoryName)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function App() {
   return (
     <div id='app'>
       {activePage === 'categories' && <CategoriesList />}
-      {activePage === 'products' && <ProductsList productCategory={productCategory} />}
+      {activePage === 'products' && <ProductsList selectedCategoryName={selectedCategoryName} />}
     </div>
   );
 }

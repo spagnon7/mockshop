@@ -2,7 +2,7 @@ import { SET_CATEGORIES_DISPLAY, SET_PRODUCTS_DISPLAY } from '../actions/appActi
 
 const initialCurrentDisplay = {
     activePage: 'categories',
-    productCategory: null
+    selectedCategoryName: null
 }
 
 const appReducer = (state = initialCurrentDisplay, action) => {
@@ -10,12 +10,12 @@ const appReducer = (state = initialCurrentDisplay, action) => {
         case SET_CATEGORIES_DISPLAY: return {
             ...state,
             activePage: 'categories',
-            productCategory: null
+            selectedCategoryName: null
         }
         case SET_PRODUCTS_DISPLAY: return {
             ...state,
             activePage: 'products',
-            productCategory: action.payload
+            selectedCategoryName: action.payload
         }
         default: return state
     }

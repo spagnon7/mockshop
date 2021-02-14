@@ -43,7 +43,7 @@ const ProductsList = (props) => {
         dispatch(setCategoriesDisplay());
       }
 
-    const productCards = productData[props.productCategory].map( (product, index) => {
+    const productCards = productData[props.selectedCategoryName].map( (product, index) => {
         return (
             <li className={classes.cardLi} key={index}>
                 <Card variant='outlined'>
@@ -63,7 +63,7 @@ const ProductsList = (props) => {
 
     return (
         <>
-            <h2 className={classes.title}>{props.productCategory}</h2>
+            <h2 className={classes.title}>{props.selectedCategoryName}</h2>
             <ul id='cards-container'>
                 {productCards}
             </ul>
