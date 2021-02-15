@@ -1,7 +1,8 @@
 import { POPULATE_PRODUCTS, GET_PRODUCTS_FAILURE } from '../actions/productActionTypes';
 
 const initialProductDataState = {
-    productData: null,
+    productDataByCategory: null,
+    productDataById: null,
     error: ''
 }
 
@@ -13,19 +14,28 @@ const productsReducer = (state = initialProductDataState, action) => {
           return newObj;
         }, {});
       }
+
+    const organizeDataById = (productData) => {
+        return productData.reduce( (newObj, item) => {
+            newObj[item.id] = item;
+            return newObj;
+        }, {});
+    }
     
     switch (action.type) {
         case POPULATE_PRODUCTS: return {
             ...state,
-            productData: organizeDataByCategory(action.payload),
+            productDataByCategory: organizeDataByCategory(action.payload),
+            productDataById: organizeDataById(action.payload),
             error: ''
-        }
+        };
         case GET_PRODUCTS_FAILURE: return {
             ...state,
-            productData: null,
+            productDataByCategory: null,
+            productDataById: null,
             error: action.payload
-        }
-        default: return state
+        };
+        default: return state;
     }
 }
 

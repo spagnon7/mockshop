@@ -13,18 +13,18 @@ const useStyles = makeStyles({
 });
 
 const CategoriesList = () => {
-    const productData = useSelector(state => state.productData.productData);
+    const productDataByCategory = useSelector(state => state.productData.productDataByCategory);
     const error = useSelector(state => state.productData.error);    
     const dispatch = useDispatch();
     const classes = useStyles();
 
-  if (productData) {
+  if (productDataByCategory) {
         return (
             <div id='cards-container'>
-                {Object.keys(productData).map( categoryName => {     
+                {Object.keys(productDataByCategory).map( categoryName => {     
                     return <CardTemplate 
                         title = {categoryName}
-                        imageURL = {productData[categoryName][0]['image']}
+                        imageURL = {productDataByCategory[categoryName][0]['image']}
                         clickHandler = {() => dispatch(setProductsListDisplay(categoryName))}
                     />;
                 })}
