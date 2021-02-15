@@ -1,4 +1,4 @@
-import { GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE } from '../actions/productActionTypes';
+import { POPULATE_PRODUCTS, GET_PRODUCTS_FAILURE } from '../actions/productActionTypes';
 
 const initialProductDataState = {
     productData: null,
@@ -15,7 +15,7 @@ const productsReducer = (state = initialProductDataState, action) => {
       }
     
     switch (action.type) {
-        case GET_PRODUCTS_SUCCESS: return {
+        case POPULATE_PRODUCTS: return {
             ...state,
             productData: organizeDataByCategory(action.payload),
             error: ''

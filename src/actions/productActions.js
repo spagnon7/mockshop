@@ -1,8 +1,8 @@
-import { GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE } from './productActionTypes';
+import { POPULATE_PRODUCTS, GET_PRODUCTS_FAILURE } from './productActionTypes';
 
-const getProductsSuccess = productsData => {
+const populateProducts = productsData => {
     return {
-        type: GET_PRODUCTS_SUCCESS,
+        type: POPULATE_PRODUCTS,
         payload: productsData
     }
 };
@@ -19,7 +19,7 @@ const getProducts = () => {
         fetch('https://fakestoreapi.com/products')
             .then(response => response.json())
             .then(data => {
-                dispatch(getProductsSuccess(data));
+                dispatch(populateProducts(data));
             })
             .catch(error => {
                 dispatch(getProductsFailure(error.message))
