@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCategoriesDisplay } from '../actions/appActions';
+import { setCategoriesListDisplay, setProductDisplay } from '../actions/appActions';
 import 'fontsource-roboto';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
@@ -48,11 +48,11 @@ const ProductsList = (props) => {
                     return <CardTemplate 
                         title = {productData.title}
                         imageURL = {productData.image}
-                        clickHandler = {() => {}}
+                        clickHandler = {() => dispatch(setProductDisplay())}
                     />;
                 })}
             </div>
-            <Button variant='outlined' onClick={() => dispatch(setCategoriesDisplay())}>Back</Button>
+            <Button variant='outlined' onClick={() => dispatch(setCategoriesListDisplay())}>Back</Button>
         </>
     );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setProductsDisplay } from '../actions/appActions';
+import { setProductsListDisplay } from '../actions/appActions';
 import 'fontsource-roboto';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -25,7 +25,7 @@ const CategoriesList = () => {
                     return <CardTemplate 
                         title = {categoryName}
                         imageURL = {productData[categoryName][0]['image']}
-                        clickHandler = {() => dispatch(setProductsDisplay(categoryName))}
+                        clickHandler = {() => dispatch(setProductsListDisplay(categoryName))}
                     />;
                 })}
             </div>

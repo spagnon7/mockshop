@@ -1,16 +1,23 @@
-import { SET_CATEGORIES_DISPLAY, SET_PRODUCTS_DISPLAY } from './appActionTypes';
+import { SET_CATEGORIES_LIST_DISPLAY, SET_PRODUCTS_LIST_DISPLAY, SET_PRODUCT_DISPLAY } from './appActionTypes';
 
-const setCategoriesDisplay = () => {
+const setCategoriesListDisplay = () => {
     return {
-        type: SET_CATEGORIES_DISPLAY
+        type: SET_CATEGORIES_LIST_DISPLAY
     }
 }
 
-const setProductsDisplay = (categoryName) => {
+const setProductsListDisplay = (categoryName) => {
     return {
-        type: SET_PRODUCTS_DISPLAY,
+        type: SET_PRODUCTS_LIST_DISPLAY,
         categoryName
     }
 }
 
-export { setCategoriesDisplay, setProductsDisplay }
+const setProductDisplay = (productId) => {
+    return {
+        type: SET_PRODUCT_DISPLAY,
+        productId
+    }
+}
+
+export { setCategoriesListDisplay, setProductsListDisplay, setProductDisplay }
