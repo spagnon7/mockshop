@@ -12,8 +12,15 @@ const Product = () => {
 
     return (
         <>
-            <h2>This is the product page. The selected product ID is {selectedProductId}</h2>
-            <p>product title: {selectedProductData.title}</p>
+            <div id='product-container'>
+                <img src={selectedProductData.image} id='product-image'/>
+                <div id='product-details'>
+                    <h2>{selectedProductData.title}</h2>
+                    <p>{selectedProductData.description}</p>
+                    <p id='product-price'>Price: ${selectedProductData.price}</p>
+                    <Button variant='outlined' onClick={() => {}}>Add to Cart</Button>
+                </div>
+            </div>
             <Button variant='outlined' onClick={() => dispatch(setProductsListDisplay(selectedCategoryName))}>Back</Button>
         </>
     );

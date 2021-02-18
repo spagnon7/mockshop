@@ -16,3 +16,31 @@ body {
 #app {
   text-align: center;
 }
+
+#product-image {
+  max-height: 250px;
+  max-width: 250px;
+}
+
+#product-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+#product-image {
+  margin-right: 50px;
+}
+
+#product-details {
+  text-align: left;
+}
+
+#product-container h2 {
+  margin-top: 0;
+}
+
+#product-price {
+  font-weight: bold;
+}
