@@ -59,7 +59,6 @@ const Product = () => {
                     <FormControl className={classes.sizeSelector}>
                         <InputLabel shrink>Size</InputLabel>
                         <Select value={selectedSize} onChange={handleSizeSelectionChange}>
-                            <MenuItem value={"XS"}>XS</MenuItem>
                             <MenuItem value={"S"}>S</MenuItem>
                             <MenuItem value={"M"}>M</MenuItem>
                             <MenuItem value={"L"}>L</MenuItem>
