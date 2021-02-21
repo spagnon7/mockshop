@@ -32,15 +32,16 @@ const useStyles = makeStyles({
     }
 })
 
-const ProductsList = (props) => {
+const ProductsList = () => {
     const productDataByCategory = useSelector(state => state.productData.productDataByCategory);
+    const selectedCategoryName = useSelector(state => state.appData.selectedCategoryName);
     const dispatch = useDispatch();
     const classes = useStyles();
-    const selectedCategoryData = productDataByCategory[props.selectedCategoryName];
+    const selectedCategoryData = productDataByCategory[selectedCategoryName];
 
     return (
         <>
-            <h2 className={classes.title}>{props.selectedCategoryName}</h2>
+            <h2 className={classes.title}>{selectedCategoryName}</h2>
             <div id='cards-container'>
                 {selectedCategoryData.map( productData => {
                     return <CardTemplate 

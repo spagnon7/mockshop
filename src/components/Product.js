@@ -48,6 +48,13 @@ const Product = () => {
     };
     setQuantitySelectorExtent(10);
 
+    let isClothingProduct;
+    if (selectedCategoryName.indexOf('clothing') >= 0) {
+        isClothingProduct = true;
+    } else {
+        isClothingProduct = false;
+    }
+
     return (
         <>
             <div id='product-container'>
@@ -56,7 +63,7 @@ const Product = () => {
                     <h2>{selectedProductData.title}</h2>
                     <p>{selectedProductData.description}</p>
                     <p id='product-price'>Price: ${selectedProductData.price}</p>
-                    <FormControl className={classes.sizeSelector}>
+                    {isClothingProduct && <FormControl className={classes.sizeSelector}>
                         <InputLabel shrink>Size</InputLabel>
                         <Select value={selectedSize} onChange={handleSizeSelectionChange}>
                             <MenuItem value={"S"}>S</MenuItem>
@@ -64,7 +71,7 @@ const Product = () => {
                             <MenuItem value={"L"}>L</MenuItem>
                             <MenuItem value={"XL"}>XL</MenuItem>
                         </Select>
-                    </FormControl>
+                    </FormControl>}
                     <FormControl className={classes.quantitySelector}>
                         <InputLabel shrink>Quantity</InputLabel>
                         <Select value={selectedQuantity} onChange={handleQuantitySelectionChange}>

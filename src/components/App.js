@@ -7,8 +7,7 @@ import ProductsList from './ProductsList';
 import Product from './Product';
 
 function App() {
-  const activePage = useSelector(state => state.appData.activePage)
-  const selectedCategoryName = useSelector(state => state.appData.selectedCategoryName)
+  const activePage = useSelector(state => state.appData.activePage);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +19,7 @@ function App() {
       case 'categoriesList':
           return <CategoriesList />;
         case 'productsList':
-          return <ProductsList selectedCategoryName={selectedCategoryName} />;
+          return <ProductsList />;
         case 'product':
           return <Product />;
         default:
