@@ -80,7 +80,7 @@ const Product = () => {
                             })}
                         </Select>
                     </FormControl>                     
-                    <Button className={classes.addToCartButton} variant='outlined' onClick={() => {}}>Add to Cart</Button>
+                    <Button className={classes.addToCartButton} variant='contained' color='primary' onClick={() => {}}>Add to Cart</Button>
                 </div>
             </div>
             <Button variant='outlined' onClick={() => dispatch(setProductsListDisplay(selectedCategoryName))}>Back</Button>

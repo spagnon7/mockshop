@@ -10,7 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
-import {setCategoriesListDisplay} from '../actions/appActions';
+import {setCategoriesListDisplay, updateSearchTerm} from '../actions/appActions';
 import Typography from '@material-ui/core/Typography';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
@@ -82,6 +82,10 @@ function App() {
     }
   }
 
+  const handleSearchTermChange = event => {
+    dispatch(updateSearchTerm(event.target.value));
+  }
+
   return (
     <div id='app'>
       <AppBar position='static' className={classes.appBar}>
@@ -98,7 +102,7 @@ function App() {
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
-            <InputBase placeholder='Search...' className={classes.searchInput} classes={{focused: classes.searchInputFocused}}/>
+            <InputBase placeholder='Search...' className={classes.searchInput} classes={{focused: classes.searchInputFocused}} onChange={handleSearchTermChange}/>
           </div>
         </Toolbar>
       </AppBar>

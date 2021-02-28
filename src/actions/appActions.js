@@ -1,4 +1,4 @@
-import { SET_CATEGORIES_LIST_DISPLAY, SET_PRODUCTS_LIST_DISPLAY, SET_PRODUCT_DISPLAY } from './appActionTypes';
+import { SET_CATEGORIES_LIST_DISPLAY, SET_PRODUCTS_LIST_DISPLAY, SET_PRODUCT_DISPLAY, UPDATE_SEARCH_TERM } from './appActionTypes';
 
 const setCategoriesListDisplay = () => {
     return {
@@ -20,4 +20,11 @@ const setProductDisplay = (productId) => {
     }
 }
 
-export { setCategoriesListDisplay, setProductsListDisplay, setProductDisplay }
+const updateSearchTerm = newSearchTerm => {
+    return {
+        type: UPDATE_SEARCH_TERM,
+        newSearchTerm
+    }
+}
+
+export { setCategoriesListDisplay, setProductsListDisplay, setProductDisplay, updateSearchTerm }
