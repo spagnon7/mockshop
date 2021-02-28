@@ -1,8 +1,8 @@
 import { POPULATE_PRODUCTS, GET_PRODUCTS_FAILURE } from '../actions/productActionTypes';
 
 const initialProductDataState = {
-    productDataByCategory: null,
-    productDataById: null,
+    productDataByCategory: {},
+    productDataById: {},
     error: ''
 }
 
