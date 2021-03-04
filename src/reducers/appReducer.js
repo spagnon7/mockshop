@@ -35,6 +35,8 @@ const appReducer = (state = initialAppState, action) => {
         ...state,
         activePage: "product",
         selectedProductId: action.productId,
+        selectedCategoryName: action.productCategory,
+        searchTerm: "",
       };
     case UPDATE_SEARCH_TERM:
       return {

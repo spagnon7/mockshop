@@ -19,10 +19,11 @@ const setProductsListDisplay = (categoryName) => {
   };
 };
 
-const setProductDisplay = (productId) => {
+const setProductDisplay = (productId, productCategory) => {
   return {
     type: SET_PRODUCT_DISPLAY,
     productId,
+    productCategory,
   };
 };
 
