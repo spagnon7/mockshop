@@ -10,6 +10,8 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import { updateSearchTerm } from "../actions/appActions";
 import { fade, makeStyles } from "@material-ui/core/styles";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
 const useStyles = makeStyles((theme) => ({
   appToolbar: {
@@ -19,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
   homeButton: {
     marginRight: 20,
     display: "inline-block",
+  },
+  cartButton: {
+    marginLeft: 20,
   },
   search: {
     backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -92,11 +97,9 @@ const StoreAppBar = () => {
           <IconButton
             color="inherit"
             className={classes.cartButton}
-            onClick={() => {
-              dispatch(setCategoriesListDisplay());
-            }}
+            onClick={() => {}}
           >
-            <HomeIcon />
+            <ShoppingCartOutlinedIcon />
           </IconButton>
         </div>
       </Toolbar>
