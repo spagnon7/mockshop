@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
 const StoreAppBar = () => {
   const classes = useStyles();
   const currentSearchTerm = useSelector((state) => state.appData.searchTerm);
+  const productsInCart = useSelector((state) => state.cartData.productsInCart);
   const currentCartTabDisplay = useSelector(
     (state) => state.cartData.isCartTabDisplayed
   );
@@ -105,7 +106,11 @@ const StoreAppBar = () => {
               dispatch(toggleCartTab(currentCartTabDisplay));
             }}
           >
-            <ShoppingCartOutlinedIcon />
+            {Object.keys(productsInCart).length === 0 ? (
+              <ShoppingCartOutlinedIcon />
+            ) : (
+              <ShoppingCartIcon />
+            )}
           </IconButton>
         </div>
       </Toolbar>
