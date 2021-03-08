@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductsListDisplay } from "../actions/appActions";
+import { addToCart } from "../actions/cartActions";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
@@ -61,6 +62,12 @@ const Product = () => {
     isClothingProduct = false;
   }
 
+  const productDataForCart = {
+    id: selectedProductId,
+    size: selectedSize,
+    qty: selectedQuantity,
+  };
+
   return (
     <>
       <div id="product-container">
@@ -97,7 +104,7 @@ const Product = () => {
             className={classes.addToCartButton}
             variant="contained"
             color="primary"
-            onClick={() => {}}
+            onClick={() => dispatch(addToCart(productDataForCart))}
           >
             Add to Cart
           </Button>

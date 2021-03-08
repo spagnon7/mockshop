@@ -1,4 +1,8 @@
-import { TOGGLE_CART_TAB } from "./cartActionTypes";
+import {
+  TOGGLE_CART_TAB,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+} from "./cartActionTypes";
 
 const toggleCartTab = (currentCartTabDisplay) => {
   return {
@@ -7,4 +11,11 @@ const toggleCartTab = (currentCartTabDisplay) => {
   };
 };
 
-export { toggleCartTab };
+const addToCart = (addedProductDetails) => {
+  return {
+    type: ADD_TO_CART,
+    addedProductDetails,
+  };
+};
+
+export { toggleCartTab, addToCart };
