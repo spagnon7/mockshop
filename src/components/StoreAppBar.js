@@ -12,6 +12,7 @@ import { updateSearchTerm } from "../actions/appActions";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import { toggleCartTab } from "../actions/cartActions";
 
 const useStyles = makeStyles((theme) => ({
   appToolbar: {
@@ -60,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
 const StoreAppBar = () => {
   const classes = useStyles();
   const currentSearchTerm = useSelector((state) => state.appData.searchTerm);
+  const currentCartTabDisplay = useSelector(
+    (state) => state.cartData.isCartTabDisplayed
+  );
   const dispatch = useDispatch();
 
   const handleSearchTermChange = (event) => {
@@ -97,7 +101,9 @@ const StoreAppBar = () => {
           <IconButton
             color="inherit"
             className={classes.cartButton}
-            onClick={() => {}}
+            onClick={() => {
+              dispatch(toggleCartTab(currentCartTabDisplay));
+            }}
           >
             <ShoppingCartOutlinedIcon />
           </IconButton>

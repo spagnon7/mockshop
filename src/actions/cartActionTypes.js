@@ -1,0 +1,3 @@
+const TOGGLE_CART_TAB = "TOGGLE_CART_TAB";
+
+export { TOGGLE_CART_TAB };

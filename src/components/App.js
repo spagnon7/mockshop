@@ -7,10 +7,14 @@ import ProductsList from "./ProductsList";
 import Product from "./Product";
 import SearchResults from "./SearchResults";
 import StoreAppBar from "./StoreAppBar";
+import ShoppingCartTab from "./ShoppingCart";
 
 function App() {
   const activePage = useSelector((state) => state.appData.activePage);
   const currentSearchTerm = useSelector((state) => state.appData.searchTerm);
+  const currentCartTabDisplay = useSelector(
+    (state) => state.cartData.isCartTabDisplayed
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,11 +37,14 @@ function App() {
   return (
     <div id="app">
       <StoreAppBar />
-      {currentSearchTerm ? (
-        <SearchResults />
-      ) : (
-        <div id="page-content-container">{pageContent()}</div>
-      )}
+      <div id="page-and-cart-container">
+        {currentSearchTerm ? (
+          <SearchResults />
+        ) : (
+          <div id="page-content-container">{pageContent()}</div>
+        )}
+        {currentCartTabDisplay && <ShoppingCartTab />}
+      </div>
     </div>
   );
 }
