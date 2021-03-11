@@ -2,7 +2,8 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setProductDisplay } from "../actions/appActions";
 
 const useStyles = makeStyles({
   shoppingCartContainer: {
@@ -13,6 +14,7 @@ const useStyles = makeStyles({
 
 const ShoppingCartTab = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const productsInCart = useSelector((state) => state.cartData.productsInCart);
   const productDataByID = useSelector(
     (state) => state.productData.productDataById
@@ -36,7 +38,18 @@ const ShoppingCartTab = () => {
           }
 
           return (
-            <div>
+            <div
+              className="shopping-cart-product"
+              key={productId}
+              onClick={() => {
+                dispatch(
+                  setProductDisplay(
+                    productId,
+                    productDataByID[productId].category
+                  )
+                );
+              }}
+            >
               <img
                 src={productDataByID[productId].image}
                 id="cart-product-image"
