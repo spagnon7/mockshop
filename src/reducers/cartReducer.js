@@ -20,7 +20,11 @@ const cartReducer = (state = initialCartState, action) => {
       const productId = action.addedProductDetails.id;
       const productQty = action.addedProductDetails.qty;
       const productSize = action.addedProductDetails.size;
-      const cartItemKey = productId + "_" + productSize;
+
+      let cartItemKey;
+      productSize
+        ? (cartItemKey = productId + "_" + productSize)
+        : (cartItemKey = productId);
       const previousCartItemQty = state.productsInCart[cartItemKey];
 
       return {

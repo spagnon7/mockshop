@@ -51,15 +51,29 @@ body {
   height: 100vh;
   border-left: 2px solid #b4b4b4;
   border-radius: 4px;
+  overflow: auto;
 }
 
 #page-content-container {
   text-align: center;
-  margin-top: 30px;
   width: 100%;
 }
 
 #page-and-cart-container {
   display: flex;
-  justify-content: space-between;
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#category-cards-container {
+  margin-top: 30px;
+}
+
+#cart-product-image {
+  height: 80px;
 }

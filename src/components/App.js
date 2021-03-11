@@ -38,11 +38,10 @@ function App() {
     <div id="app">
       <StoreAppBar />
       <div id="page-and-cart-container">
-        {currentSearchTerm ? (
-          <SearchResults />
-        ) : (
-          <div id="page-content-container">{pageContent()}</div>
-        )}
+        <div id="page-content-container">
+          {currentSearchTerm ? <SearchResults /> : pageContent()}
+        </div>
+
         {currentCartTabDisplay && <ShoppingCartTab />}
       </div>
     </div>
