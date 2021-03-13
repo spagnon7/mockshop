@@ -42,14 +42,14 @@ const ShoppingCartTab = () => {
             <div
               className="shopping-cart-product"
               key={productId}
-              // onClick={() => {
-              //   dispatch(
-              //     setProductDisplay(
-              //       productId,
-              //       productDataByID[productId].category
-              //     )
-              //   );
-              // }}
+              onClick={() => {
+                dispatch(
+                  setProductDisplay(
+                    productId,
+                    productDataByID[productId].category
+                  )
+                );
+              }}
             >
               <img
                 src={productDataByID[productId].image}
@@ -59,8 +59,9 @@ const ShoppingCartTab = () => {
               {productSize && <p>Size: {productSize}</p>}
               <p>Quantity: {productQty}</p>
               <p
-                onClick={() => {
+                onClick={(event) => {
                   dispatch(removeFromCart(cartItemKey));
+                  event.stopPropagation();
                 }}
               >
                 Remove
