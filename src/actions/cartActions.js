@@ -18,4 +18,11 @@ const addToCart = (addedProductDetails) => {
   };
 };
 
-export { toggleCartTab, addToCart };
+const removeFromCart = (removedCartItemKey) => {
+  return {
+    type: REMOVE_FROM_CART,
+    removedCartItemKey,
+  };
+};
+
+export { toggleCartTab, addToCart, removeFromCart };

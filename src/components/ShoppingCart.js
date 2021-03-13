@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { setProductDisplay } from "../actions/appActions";
+import { removeFromCart } from "../actions/cartActions";
 
 const useStyles = makeStyles({
   shoppingCartContainer: {
@@ -41,14 +42,14 @@ const ShoppingCartTab = () => {
             <div
               className="shopping-cart-product"
               key={productId}
-              onClick={() => {
-                dispatch(
-                  setProductDisplay(
-                    productId,
-                    productDataByID[productId].category
-                  )
-                );
-              }}
+              // onClick={() => {
+              //   dispatch(
+              //     setProductDisplay(
+              //       productId,
+              //       productDataByID[productId].category
+              //     )
+              //   );
+              // }}
             >
               <img
                 src={productDataByID[productId].image}
@@ -57,7 +58,13 @@ const ShoppingCartTab = () => {
               <p>{productDataByID[productId].title}</p>
               {productSize && <p>Size: {productSize}</p>}
               <p>Quantity: {productQty}</p>
-              <p>Remove</p>
+              <p
+                onClick={() => {
+                  dispatch(removeFromCart(cartItemKey));
+                }}
+              >
+                Remove
+              </p>
             </div>
           );
         })}

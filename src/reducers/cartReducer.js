@@ -36,7 +36,16 @@ const cartReducer = (state = initialCartState, action) => {
             : productQty,
         },
       };
+    case REMOVE_FROM_CART:
+      const {
+        [action.removedCartItemKey]: value,
+        ...newProductsInCart
+      } = state.productsInCart;
 
+      return {
+        ...state,
+        productsInCart: newProductsInCart,
+      };
     default:
       return state;
   }
