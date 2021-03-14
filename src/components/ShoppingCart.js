@@ -1,6 +1,5 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { setProductDisplay } from "../actions/appActions";
@@ -10,6 +9,7 @@ const useStyles = makeStyles({
   shoppingCartContainer: {
     minWidth: 200,
     width: "35%",
+    minHeight: "100vh",
   },
 });
 
@@ -40,7 +40,7 @@ const ShoppingCartTab = () => {
 
           return (
             <div
-              className="shopping-cart-product"
+              id="cart-product"
               key={productId}
               onClick={() => {
                 dispatch(
@@ -51,21 +51,28 @@ const ShoppingCartTab = () => {
                 );
               }}
             >
-              <img
-                src={productDataByID[productId].image}
-                id="cart-product-image"
-              />
-              <p>{productDataByID[productId].title}</p>
-              {productSize && <p>Size: {productSize}</p>}
-              <p>Quantity: {productQty}</p>
-              <p
-                onClick={(event) => {
-                  dispatch(removeFromCart(cartItemKey));
-                  event.stopPropagation();
-                }}
-              >
-                Remove
-              </p>
+              <div id="cart-product-image-container">
+                <img
+                  src={productDataByID[productId].image}
+                  id="cart-product-image"
+                />
+              </div>
+              <div id="cart-product-details">
+                <p id="cart-product-title">
+                  {productDataByID[productId].title}
+                </p>
+                {productSize && <p>Size: {productSize}</p>}
+                <p>Qty: {productQty}</p>
+                <p
+                  onClick={(event) => {
+                    dispatch(removeFromCart(cartItemKey));
+                    event.stopPropagation();
+                  }}
+                  id="product-remove-button"
+                >
+                  Remove
+                </p>
+              </div>
             </div>
           );
         })}
