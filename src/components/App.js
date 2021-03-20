@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../actions/productActions";
+import { populateProducts } from "../actions/productActions";
 import { useEffect } from "react";
 import CategoriesList from "./CategoriesList";
 import ProductsList from "./ProductsList";
@@ -8,6 +8,7 @@ import Product from "./Product";
 import SearchResults from "./SearchResults";
 import StoreAppBar from "./StoreAppBar";
 import ShoppingCartTab from "./ShoppingCart";
+import { MOCK_DATA } from "../mock_data/MOCK_DATA";
 
 function App() {
   const activePage = useSelector((state) => state.appData.activePage);
@@ -18,7 +19,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(populateProducts(MOCK_DATA));
   }, []);
 
   const pageContent = () => {
