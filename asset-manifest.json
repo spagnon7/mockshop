@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/spagnon7/mockshop/static/css/main.19f0a74f.chunk.css",
+    "main.js": "/spagnon7/mockshop/static/js/main.b2a59498.chunk.js",
+    "main.js.map": "/spagnon7/mockshop/static/js/main.b2a59498.chunk.js.map",
+    "runtime-main.js": "/spagnon7/mockshop/static/js/runtime-main.209aa59d.js",
+    "runtime-main.js.map": "/spagnon7/mockshop/static/js/runtime-main.209aa59d.js.map",
+    "static/css/2.fdb2baaa.chunk.css": "/spagnon7/mockshop/static/css/2.fdb2baaa.chunk.css",
+    "static/js/2.f5ea8ffe.chunk.js": "/spagnon7/mockshop/static/js/2.f5ea8ffe.chunk.js",
+    "static/js/2.f5ea8ffe.chunk.js.map": "/spagnon7/mockshop/static/js/2.f5ea8ffe.chunk.js.map",
+    "index.html": "/spagnon7/mockshop/index.html",
+    "static/css/2.fdb2baaa.chunk.css.map": "/spagnon7/mockshop/static/css/2.fdb2baaa.chunk.css.map",
+    "static/css/main.19f0a74f.chunk.css.map": "/spagnon7/mockshop/static/css/main.19f0a74f.chunk.css.map",
+    "static/js/2.f5ea8ffe.chunk.js.LICENSE.txt": "/spagnon7/mockshop/static/js/2.f5ea8ffe.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/spagnon7/mockshop/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.209aa59d.js",
+    "static/css/2.fdb2baaa.chunk.css",
+    "static/js/2.f5ea8ffe.chunk.js",
+    "static/css/main.19f0a74f.chunk.css",
+    "static/js/main.b2a59498.chunk.js"
+  ]
+}
