@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/web_store/static/css/main.b0027b87.chunk.css",
-    "main.js": "/web_store/static/js/main.69b84540.chunk.js",
-    "main.js.map": "/web_store/static/js/main.69b84540.chunk.js.map",
-    "runtime-main.js": "/web_store/static/js/runtime-main.0f90233d.js",
-    "runtime-main.js.map": "/web_store/static/js/runtime-main.0f90233d.js.map",
-    "static/css/2.16aaedc6.chunk.css": "/web_store/static/css/2.16aaedc6.chunk.css",
-    "static/js/2.157cf502.chunk.js": "/web_store/static/js/2.157cf502.chunk.js",
-    "static/js/2.157cf502.chunk.js.map": "/web_store/static/js/2.157cf502.chunk.js.map",
-    "index.html": "/web_store/index.html",
-    "static/css/2.16aaedc6.chunk.css.map": "/web_store/static/css/2.16aaedc6.chunk.css.map",
-    "static/css/main.b0027b87.chunk.css.map": "/web_store/static/css/main.b0027b87.chunk.css.map",
-    "static/js/2.157cf502.chunk.js.LICENSE.txt": "/web_store/static/js/2.157cf502.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/web_store/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+    "main.css": "/mockshop/static/css/main.b0027b87.chunk.css",
+    "main.js": "/mockshop/static/js/main.7d9a5c09.chunk.js",
+    "main.js.map": "/mockshop/static/js/main.7d9a5c09.chunk.js.map",
+    "runtime-main.js": "/mockshop/static/js/runtime-main.3c8931ca.js",
+    "runtime-main.js.map": "/mockshop/static/js/runtime-main.3c8931ca.js.map",
+    "static/css/2.a13085cf.chunk.css": "/mockshop/static/css/2.a13085cf.chunk.css",
+    "static/js/2.126102b7.chunk.js": "/mockshop/static/js/2.126102b7.chunk.js",
+    "static/js/2.126102b7.chunk.js.map": "/mockshop/static/js/2.126102b7.chunk.js.map",
+    "index.html": "/mockshop/index.html",
+    "static/css/2.a13085cf.chunk.css.map": "/mockshop/static/css/2.a13085cf.chunk.css.map",
+    "static/css/main.b0027b87.chunk.css.map": "/mockshop/static/css/main.b0027b87.chunk.css.map",
+    "static/js/2.126102b7.chunk.js.LICENSE.txt": "/mockshop/static/js/2.126102b7.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/mockshop/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.0f90233d.js",
-    "static/css/2.16aaedc6.chunk.css",
-    "static/js/2.157cf502.chunk.js",
+    "static/js/runtime-main.3c8931ca.js",
+    "static/css/2.a13085cf.chunk.css",
+    "static/js/2.126102b7.chunk.js",
     "static/css/main.b0027b87.chunk.css",
-    "static/js/main.69b84540.chunk.js"
+    "static/js/main.7d9a5c09.chunk.js"
   ]
 }
