@@ -23,7 +23,10 @@ const ShoppingCartTab = () => {
 
   return (
     <Paper variant="outlined" className={classes.shoppingCartContainer}>
-      {Object.keys(productsInCart).length > 0 &&
+      <h4 id="shopping-cart-title">Shopping Cart</h4>
+      {Object.keys(productsInCart).length < 1 ? (
+        <p id="empty-cart-statement">The Cart is Empty</p>
+      ) : (
         Object.keys(productsInCart).map((cartItemKey) => {
           const productQty = productsInCart[cartItemKey];
           let productId;
@@ -75,7 +78,8 @@ const ShoppingCartTab = () => {
               </div>
             </div>
           );
-        })}
+        })
+      )}
     </Paper>
   );
 };

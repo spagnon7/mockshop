@@ -104,3 +104,12 @@ body {
 #cart-product-title {
   font-weight: bold;
 }
+
+#shopping-cart-title {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#empty-cart-statement {
+  text-align: center;
+}

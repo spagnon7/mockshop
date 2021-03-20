@@ -68,26 +68,21 @@ const SearchResults = () => {
           Clear Search Results
         </Button>
       </div>
-      {currentSearchTerm.length > 3 && (
-        <div className={classes.productCardsContainer}>
-          {IDsOfProductsMatchingSearchTerm.map((productId) => {
-            return (
-              <CardTemplate
-                title={productsByID[productId].title}
-                imageURL={productsByID[productId].image}
-                clickHandler={() =>
-                  dispatch(
-                    setProductDisplay(
-                      productId,
-                      productsByID[productId].category
-                    )
-                  )
-                }
-              />
-            );
-          })}
-        </div>
-      )}
+      <div className={classes.productCardsContainer}>
+        {IDsOfProductsMatchingSearchTerm.map((productId) => {
+          return (
+            <CardTemplate
+              title={productsByID[productId].title}
+              imageURL={productsByID[productId].image}
+              clickHandler={() =>
+                dispatch(
+                  setProductDisplay(productId, productsByID[productId].category)
+                )
+              }
+            />
+          );
+        })}
+      </div>
     </>
   );
 };
